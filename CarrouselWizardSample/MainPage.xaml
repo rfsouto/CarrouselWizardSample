@@ -1,0 +1,41 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CarrouselWizardSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:CarrouselWizardSample.Controls"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid x:Name="ImageGrid" Margin="0,0,0,0" Grid.Row="0" >
+            <!--Backgroudn que representa las imagenes del tutorial-->
+            <Grid.Background>
+                <ImageBrush x:Name="ImageContainer" />
+            </Grid.Background>
+            <!--Espacio para botones que se quiera interactuar por encima de las imágenes. -->
+            
+        </Grid>
+        <!--StackPanel con el control que realiza el efecto Wizard-->
+        <StackPanel x:Name="stkIndicator"
+                    VerticalAlignment="Bottom" Margin="0" Height="5" Grid.Row="0">
+            <Grid >
+                <Rectangle Height="1" Margin="0,-1,0,0" Grid.Row="0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <controls:BaseRectangle x:Name="WizardIndicator" Height="5" Grid.Row="0"></controls:BaseRectangle>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>
